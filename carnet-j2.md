@@ -6,18 +6,20 @@ Binôme : b18 · Membres : Chiheb KEBBAS, Alexandre GUMERY · Nos réglages sont
 
 Pour chaque notion, chacun écrit « à l'aise » ou « à renforcer ». Ce n'est ni évalué ni classé : c'est votre point de départ pour le bilan individuel de fin de module.
 
-| Notion | Membre 1 : … | Membre 2 : … |
+| Notion | Membre 1 : Chiheb | Membre 2 : Alexandre |
 |---|---|---|
-| Structure HTML | | |
-| CSS et responsive | | |
-| JavaScript | | |
-| DOM et événements | | |
-| Git | | |
-| Tests | | |
+| Structure HTML | à l'aise | |
+| CSS et responsive | à l'aise | |
+| JavaScript | à l'aise | |
+| DOM et événements | à l'aise | |
+| Git | à l'aise | |
+| Tests | à renforcer | |
+
+Chiheb était absent mardi et mercredi : son positionnement n'a pas été fait mardi, il l'a rempli le 9 octobre 2026, avant la soutenance. Le TP a été fait séparément par chacun. La colonne d'Alexandre est à remplir par lui.
 
 Chacun, en une phrase, son objectif personnel pour J2 et J3.
 
-Membre 1 :
+Membre 1 : mieux maîtriser les tests, savoir lire un test rouge et en écrire un avant le code.
 
 Membre 2 :
 
@@ -89,6 +91,10 @@ Pour aller plus loin : non fait.
 ## Fin de journée
 
 Chacun, une phrase : ce que vous savez faire ce soir et que vous ne saviez pas faire ce matin. Relisez votre positionnement : une notion est-elle passée de « à renforcer » à « à l'aise » ?
+
+Membre 1 (Chiheb) : je sais maintenant lire un test rouge (son nom, son message, sa ligne), trouver la cause, corriger le code et faire un commit par correction ; et écrire le test avant le code. Les tests, que j'avais notés « à renforcer », restent ma notion à travailler, mais je sais prouver qu'un test sert en cassant le code exprès.
+
+Membre 2 (Alexandre) :
 
 ## J3 · Terminer Cap Web
 
