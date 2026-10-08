@@ -91,6 +91,14 @@ limiteElt.textContent = String(LIMITE);
 champ.addEventListener('input', majCompteur);
 majCompteur();
 
+// Entrée envoie le message, Maj+Entrée va à la ligne. requestSubmit passe par l'écouteur « submit » : même validation.
+champ.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && !event.shiftKey) {
+    event.preventDefault();
+    formulaire.requestSubmit();
+  }
+});
+
 charger();
 renderMessages(historique, liste);
 
