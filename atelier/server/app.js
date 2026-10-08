@@ -21,6 +21,13 @@ const TYPES = {
   'js/view.js': 'text/javascript; charset=utf-8'
 };
 
+// Les conseils que la route /api/conseil tire au hasard.
+const CONSEILS = [
+  'Relisez toujours un test rouge avant de toucher au code.',
+  'Un commit par correction : votre historique raconte votre travail.',
+  'Un texte venu de l’utilisateur reste du texte, jamais du HTML.'
+];
+
 export function createApp({ publicDir, version = 'dev' } = {}) {
   const serveur = http.createServer((req, res) => {
     traiter(req, res).catch(() => {
@@ -48,6 +55,14 @@ export function createApp({ publicDir, version = 'dev' } = {}) {
     } catch {
       res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
       res.end('Non trouvé');
+      return;
+    }
+    // Route JSON : un conseil tiré au hasard.
+    if (chemin === '/api/conseil') {
+      const conseil = CONSEILS[Math.floor(Math.random() * CONSEILS.length)];
+      const corps = JSON.stringify({ conseil });
+      res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'content-length': Buffer.byteLength(corps) });
+      res.end(methode === 'HEAD' ? '' : corps);
       return;
     }
     // Métadonnée de version fournie au démarrage.
