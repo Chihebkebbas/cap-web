@@ -9,14 +9,14 @@ const MOTS = {
   voisin: "Mon voisin habite à côté.",
 };
 
-const liste = Object.keys(MOTS)
+const motsEnTexte = Object.keys(MOTS)
   .map((mot) => `« ${mot} »`)
   .join(" et ");
 
 const REPONSES = {
   salut:
     "Bonjour ! Je suis Cap Web, un assistant à règles. Écrivez « aide » pour voir ce que je sais faire.",
-  aide: `Je connais « salut », « aide », « test », et deux mots à moi : ${liste}.`,
+  aide: `Je connais « salut », « aide », « test », et deux mots à moi : ${motsEnTexte}.`,
   test: "Test bien reçu : mes règles fonctionnent.",
   repli:
     "Je ne connais pas encore cette phrase. Écrivez « aide » pour voir les mots que je connais.",
