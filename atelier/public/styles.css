@@ -116,3 +116,10 @@ button:hover {
 footer {
   font-size: 0.9rem;
 }
+
+/* Petits écrans : le bouton Envoyer prend toute la largeur. */
+@media (max-width: 600px) {
+  form button[type="submit"] {
+    width: 100%;
+  }
+}
