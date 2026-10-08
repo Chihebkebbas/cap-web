@@ -62,8 +62,8 @@ Aucune règle ne manquait : `AGENTS.md` n'a pas eu besoin d'être complété.
 |---|---|
 | Fonction tirée | F2, `compterMots(message)`, tirée pour b18 |
 | Le rouge vu (message exact) | `SyntaxError: The requested module '../public/js/brain.js' does not provide an export named 'compterMots'` |
-| Identifiant du commit `test:` | `e28821f` |
-| Identifiant du commit `feat:` | `a59805e` |
+| Identifiant du commit `test:` | `0f7d672` |
+| Identifiant du commit `feat:` | `bffdf08` |
 | Casse volontaire : la ligne changée | `return texte.split(/\s+/).length;` remplacée par `return 1;` |
 | Casse volontaire : le test devenu rouge | « C1 : compte les mots séparés par des espaces » et « C2 : plusieurs espaces, tabulations et retours à la ligne ne font qu’un séparateur » (2 rouges sur 49) |
 | Pour aller plus loin : la deuxième fonction | non faite |
