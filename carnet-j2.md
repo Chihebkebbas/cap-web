@@ -78,11 +78,13 @@ Les critères C1 à C5 de votre fonction, recopiés de la fiche :
 
 | Patch | Accepté ou refusé | Fichier et ligne | Raison |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Accepté | `public/js/brain.js`, lignes 18, 47 et 48, et `tests/merci.test.js` | La description dit la même chose que le diff : 2 fichiers, 14 lignes ajoutées, aucun test existant modifié. Le nouveau test couvre la casse, les espaces et la distinction avec salut, aide et test. |
+| 2 | Refusé | `tests/contrat/brain.contrat.test.js`, lignes 69, 71 et 86 ; et `public/js/brain.js`, ligne 38 | La description ne parle pas du contrat, or le patch réécrit trois assertions pour supprimer les espaces autour. Raison : `normaliser()` ne fait que `toLowerCase()`, le `trim()` a disparu de `replyTo`. Avec le contrat d'origine, 2 tests rougissent, et « ␣AU REVOIR␣ » reçoit le repli. Des tests verts, mais parce qu'on a affaibli le contrat. |
+| 3 | Refusé | `public/js/view.js`, ligne 13 (`createContextualFragment(enGras(msg.text))`) | Le texte de l'utilisateur redevient du HTML : un message `<img src=x onerror=…>` exécute du JavaScript (essayé dans le navigateur). La description dit « sans innerHTML », mais la règle « le texte reste du texte » est contournée : le contrat ne cherche que le mot `innerHTML`. |
 
-Pour aller plus loin : le patch que vous avez corrigé, et ce que vous avez changé.
+Méthode : une copie neuve de `base` par patch, `git init`, `git apply --stat` pour lister les fichiers, `git apply`, puis `npm test` (46 verts pour les patchs 2 et 3, 45 pour le patch 1) ; ensuite le contrat d'origine rejoué contre le code du patch 2.
+
+Pour aller plus loin : non fait.
 
 ## Fin de journée
 
