@@ -1,45 +1,51 @@
 // Cap Web — cerveau à règles. Fonctions pures : aucun accès à la page.
 
 // Vos réglages : recopiez ici la limite et les deux mots de votre cahier-personnel.json.
-// Les valeurs écrites ci-dessous sont celles de l'exemple (240, boussole, refuge), pas les vôtres.
-export const LIMITE = 240;
+
+export const LIMITE = 220;
 
 const MOTS = {
-  boussole: 'La boussole indique le nord.',
-  refuge: 'Un refuge accueille les randonneurs.'
+  lanterne: "La lanterne éclaire le chemin.",
+  voisin: "Mon voisin habite à côté.",
 };
 
-const liste = Object.keys(MOTS).map((mot) => `« ${mot} »`).join(' et ');
+const liste = Object.keys(MOTS)
+  .map((mot) => `« ${mot} »`)
+  .join(" et ");
 
 const REPONSES = {
-  salut: 'Bonjour ! Je suis Cap Web, un assistant à règles. Écrivez « aide » pour voir ce que je sais faire.',
+  salut:
+    "Bonjour ! Je suis Cap Web, un assistant à règles. Écrivez « aide » pour voir ce que je sais faire.",
   aide: `Je connais « salut », « aide », « test », et deux mots à moi : ${liste}.`,
-  test: 'Test bien reçu : mes règles fonctionnent.'
+  test: "Test bien reçu : mes règles fonctionnent.",
 };
 
 export function validateMessage(raw) {
-  if (typeof raw !== 'string') {
-    return { ok: false, error: 'Le message doit être du texte.' };
+  if (typeof raw !== "string") {
+    return { ok: false, error: "Le message doit être du texte." };
   }
-  if (raw === '') {
-    return { ok: false, error: 'Le message ne doit pas être vide.' };
+  if (raw === "") {
+    return { ok: false, error: "Le message ne doit pas être vide." };
   }
   const value = raw.trim();
   if (value.length > 280) {
-    return { ok: false, error: `Le message doit contenir ${LIMITE} caractères au maximum.` };
+    return {
+      ok: false,
+      error: `Le message doit contenir ${LIMITE} caractères au maximum.`,
+    };
   }
   return { ok: true, value };
 }
 
 export function replyTo(message) {
   const texte = String(message).toLowerCase();
-  if (texte === 'salut' || texte === 'bonjour') {
+  if (texte === "salut" || texte === "bonjour") {
     return REPONSES.salut;
   }
-  if (texte === 'aide') {
+  if (texte === "aide") {
     return REPONSES.aide;
   }
-  if (texte === 'test') {
+  if (texte === "test") {
     return REPONSES.test;
   }
   if (Object.hasOwn(MOTS, texte)) {
