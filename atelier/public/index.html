@@ -17,7 +17,8 @@
       <ul id="messages" aria-live="polite" aria-label="Messages"></ul>
       <form id="chat-form">
         <label for="message">Votre message (<span id="limite">…</span> caractères maximum)</label>
-        <textarea id="message" name="message" rows="3" required></textarea>
+        <textarea id="message" name="message" rows="3" required aria-describedby="compteur"></textarea>
+        <p id="compteur"></p>
         <button type="submit">Envoyer</button>
       </form>
       <button type="button" id="effacer">Effacer la conversation</button>
