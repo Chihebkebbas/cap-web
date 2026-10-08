@@ -123,3 +123,9 @@ footer {
     width: 100%;
   }
 }
+
+/* Le compteur passe en rouge et en gras à 90 % de la limite (couleur lisible sur fond blanc). */
+#compteur.alerte {
+  color: #b00020;
+  font-weight: 700;
+}

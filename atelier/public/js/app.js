@@ -33,9 +33,10 @@ function charger() {
   }
 }
 
-// Affiche « longueur / LIMITE » sous le champ.
+// Affiche « longueur / LIMITE » sous le champ, et prévient à 90 % de la limite.
 function majCompteur() {
   compteur.textContent = `${champ.value.length} / ${LIMITE}`;
+  compteur.classList.toggle('alerte', champ.value.length >= LIMITE * 0.9);
 }
 
 // Demande un conseil au serveur ; si le serveur ne répond pas, renvoie un message clair.
