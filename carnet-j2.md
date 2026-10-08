@@ -87,3 +87,11 @@ Pour aller plus loin : le patch que vous avez corrigé, et ce que vous avez chan
 ## Fin de journée
 
 Chacun, une phrase : ce que vous savez faire ce soir et que vous ne saviez pas faire ce matin. Relisez votre positionnement : une notion est-elle passée de « à renforcer » à « à l'aise » ?
+
+## J3 · Terminer Cap Web
+
+### Étape 1 · Le troisième mot
+
+Prédiction, écrite avant de toucher au code : si j'ajoute un troisième mot dans `MOTS`, la réponse à « aide » listera bien les trois mots, parce que la liste est calculée avec `Object.keys(MOTS)`, mais elle dira encore « deux mots à moi », parce que ce nombre est écrit à la main dans la phrase.
+
+Résultat : prédiction exacte. Avec le mot « remparts » ajouté, « aide » répondait « deux mots à moi : « lanterne » et « voisin » et « remparts » ». J'ai remplacé « deux » par `${Object.keys(MOTS).length}` : le nombre est maintenant calculé et dit 3.
