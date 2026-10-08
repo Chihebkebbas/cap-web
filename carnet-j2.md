@@ -103,3 +103,11 @@ Membre 2 (Alexandre) :
 Prédiction, écrite avant de toucher au code : si j'ajoute un troisième mot dans `MOTS`, la réponse à « aide » listera bien les trois mots, parce que la liste est calculée avec `Object.keys(MOTS)`, mais elle dira encore « deux mots à moi », parce que ce nombre est écrit à la main dans la phrase.
 
 Résultat : prédiction exacte. Avec le mot « remparts » ajouté, « aide » répondait « deux mots à moi : « lanterne » et « voisin » et « remparts » ». J'ai remplacé « deux » par `${Object.keys(MOTS).length}` : le nombre est maintenant calculé et dit 3.
+
+### Étape 3 · L'accessibilité
+
+Lighthouse (Chrome, catégorie Accessibilité) sur http://127.0.0.1:3000, avec le `label` du champ : **100 / 100**. C'est Chiheb qui a lancé la mesure.
+
+Sans le `label`, le score Lighthouse n'a pas été mesuré. À la place, un audit avec axe-core (le moteur d'audit qu'utilise Lighthouse) sur une copie de la page sans le `label` : avec le label, 0 violation ; sans le label, 2 violations, « Form elements must have labels » (règle `label`, critique) et « Form elements should have a visible label » (règle `label-title-only`, grave). Ce n'est donc pas un score Lighthouse, mais l'alerte attendue est confirmée.
+
+Ce qu'on retient : le `label` donne un nom au champ pour un lecteur d'écran. Sans lui, le champ n'a pas de nom, même si le compteur est relié par `aria-describedby`.
