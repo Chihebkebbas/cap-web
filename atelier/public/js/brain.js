@@ -56,3 +56,15 @@ export function replyTo(message) {
   // Message inconnu : un repli distinct, qui renvoie vers « aide ».
   return REPONSES.repli;
 }
+
+// Compte les mots d'un message : un mot est une suite de caractères sans espace. Pure : ne touche pas à la page.
+export function compterMots(message) {
+  if (typeof message !== "string") {
+    return 0;
+  }
+  const texte = message.trim();
+  if (texte === "") {
+    return 0;
+  }
+  return texte.split(/\s+/).length;
+}
