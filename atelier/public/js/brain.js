@@ -58,6 +58,16 @@ export function replyTo(message) {
   return REPONSES.repli;
 }
 
+// Dit si une valeur venue de l'extérieur (mémoire du navigateur, réseau) a la forme d'un message.
+export function estMessage(m) {
+  return (
+    typeof m === "object" &&
+    m !== null &&
+    (m.role === "user" || m.role === "assistant") &&
+    typeof m.text === "string"
+  );
+}
+
 // Compte les mots d'un message : un mot est une suite de caractères sans espace. Pure : ne touche pas à la page.
 export function compterMots(message) {
   if (typeof message !== "string") {
